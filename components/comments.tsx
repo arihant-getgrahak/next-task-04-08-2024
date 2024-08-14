@@ -16,7 +16,10 @@ export const CommentDetail = () => {
       <h1 className="text-3xl font-bold text-center">Comments</h1>
       {data &&
         data.slice(1, 4).map((data) => (
-          <div className="mt-4 mb-4 flex flex-col gap-2 border-b-2 border-black">
+          <div
+            className="mt-4 mb-4 flex flex-col gap-2 border-b-2 border-black"
+            key={data.id}
+          >
             <p>
               <span className="font-bold"> Name:</span> {data?.name}
             </p>
