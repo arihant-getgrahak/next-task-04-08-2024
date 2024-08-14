@@ -25,7 +25,7 @@ export const SpecificPost = (params: { post: string }) => {
             {data.title}
           </h2>
           <p className="text-center lg:p-5 lg:w-5/6 ">{data.body}</p>
-          <CommentDetail id={data.id} />
+          <CommentDetail />
           <AuthorDetail id={data.userId} />
         </div>
       )}

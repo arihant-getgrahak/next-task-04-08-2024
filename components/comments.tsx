@@ -3,7 +3,7 @@
 import useCommentFetch from "@/hooks/useCommentFetch";
 import { Loading } from "./loading";
 
-export const CommentDetail = (props: { id: number }) => {
+export const CommentDetail = () => {
   const [data, error, isLoading] = useCommentFetch(
     `https://jsonplaceholder.typicode.com/comments`
   );
