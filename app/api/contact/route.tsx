@@ -1,10 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
+import prisma from "@/lib/prisma";
 
 export async function POST(request: NextRequest) {
   const data = await request.json();
 
   try {
-    const postFeed = await prisma.post.create({
+    const postFeed = await prisma.contact.create({
       data: data,
     });
 
