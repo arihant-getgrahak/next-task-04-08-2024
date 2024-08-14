@@ -20,11 +20,11 @@ export const SpecificPost = (params: { post: string }) => {
   return (
     <main>
       {data && (
-        <div className="p-4 mt-2">
+        <div className="p-4 mt-2 flex justify-center items-center flex-col gap-4">
           <h2 className="text-center text-2xl font-bold mt-2 mb-2">
             {data.title}
           </h2>
-          <p className="text-center lg:p-5 ">{data.body}</p>
+          <p className="text-center lg:p-5 lg:w-5/6 ">{data.body}</p>
           <CommentDetail id={data.id} />
           <AuthorDetail id={data.userId} />
         </div>
