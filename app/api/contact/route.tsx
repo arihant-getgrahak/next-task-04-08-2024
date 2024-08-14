@@ -12,7 +12,7 @@ export async function POST(request: NextRequest) {
     if (!postFeed) {
       return NextResponse.json({
         status: 500,
-        data: "Unable to post feed",
+        data: "Unable to post Comment",
       });
     }
     return NextResponse.json(postFeed);
