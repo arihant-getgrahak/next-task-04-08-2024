@@ -22,7 +22,7 @@ export const SpecificPost = (params: { post: string }) => {
     <main>
       {data && (
         <>
-          <Seo pageTitle={`post title:${data.title}`} desc={`post body: ${data.body}`} />
+          <Seo pageTitle={`post title: ${data.title}`} desc={`post body: ${data.body}`} />
           <div className="p-4 mt-2 flex justify-center items-center flex-col gap-4">
             <h2 className="text-center text-2xl font-bold mt-2 mb-2">
               {data.title}

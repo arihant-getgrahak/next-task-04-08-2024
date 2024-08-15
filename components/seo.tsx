@@ -1,25 +1,19 @@
-import Head from "next/head";
+export interface SeoType {
+    pageTitle: string;
+    desc: string;
+}
 
-const Seo = (props: {
-    pageTitle: string,
-    desc: string
-}) => {
-    const { pageTitle, desc } = props;
+const Seo = ({ pageTitle, desc }: SeoType) => {
+    const metadata = {
+        title: `${pageTitle}`,
+        description: `${desc}`,
+    };
     return (
         <>
-            <Head>
-                <title>
-                    {pageTitle &&
-                        `${pageTitle} || Arihant Jain`}
-                </title>
-                <meta name="description" content={desc} />
-                <meta
-                    name="viewport"
-                    content="width=device-width, initial-scale=1, shrink-to-fit=no"
-                />
-            </Head>
+            <title>{metadata.title}</title>
+            <meta name="description" content={metadata.description} />
         </>
     );
 };
 
-export default Seo;
+export default Seo
