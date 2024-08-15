@@ -5,6 +5,7 @@ import { Loading } from "./loading";
 import { AuthorDetail } from "./author";
 import { PostType } from "@/types/postType";
 import { CommentDetail } from "./comments";
+import Seo from "./seo";
 
 export const SpecificPost = (params: { post: string }) => {
   const [data, loading, error]: [
@@ -20,14 +21,17 @@ export const SpecificPost = (params: { post: string }) => {
   return (
     <main>
       {data && (
-        <div className="p-4 mt-2 flex justify-center items-center flex-col gap-4">
-          <h2 className="text-center text-2xl font-bold mt-2 mb-2">
-            {data.title}
-          </h2>
-          <p className="text-center lg:p-5 lg:w-5/6 ">{data.body}</p>
-          <CommentDetail />
-          <AuthorDetail id={data.userId} />
-        </div>
+        <>
+          <Seo pageTitle={`post title:${data.title}`} desc={`post body: ${data.body}`} />
+          <div className="p-4 mt-2 flex justify-center items-center flex-col gap-4">
+            <h2 className="text-center text-2xl font-bold mt-2 mb-2">
+              {data.title}
+            </h2>
+            <p className="text-center lg:p-5 lg:w-5/6 ">{data.body}</p>
+            <CommentDetail />
+            <AuthorDetail id={data.userId} />
+          </div>
+        </>
       )}
     </main>
   );
